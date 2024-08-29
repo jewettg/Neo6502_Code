@@ -20,6 +20,8 @@
 #
 #  * Option for script to tokenize a basic code text file to a *.bas file
 #    * File can be specified on command-line or via console (stdin).
+#    * Output via file (required, parameter)
+#    * Supports original author's "library", parameter.
 #
 #
 # ---------------------------------------------------------------------------------------
@@ -28,6 +30,8 @@
 # 2024-08-29 (GSJ) Branched version, adapted to ensure Python 3 compatibility and
 #                  update to a single file.   Add write de-tokenized basic to a file.
 #                  Merge listbasic and makebasic code bases into a single tool.
+#                  Expanded parameter input and error checking.
+#                  Can take stdin and output stdout.
 #
 # ---------------------------------------------------------------------------------------
 
