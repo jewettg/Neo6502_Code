@@ -689,15 +689,6 @@ if __name__ == "__main__":
         print("ABORT: Expect Python version {}.{}.{}".format(*minVer+(0,0,))+" or better required!")
         sys.exit(1)
 
-    # ts = TokenSet()
-    # print(ts.getRange(0x80))
-    # print(ts.getRange(0x180))
-    # print(ts.getRange(0x20))
-    # print(ts.getRange(0x280))
-    # print(ts.nameToToken.keys())
-    # print(ts.getByName("!!str"))
-    # print(ts.nameToToken.keys())
-
     optParams = process_parameters()
 
     theCommand = str(optParams.get("cmd"))
@@ -750,19 +741,6 @@ if __name__ == "__main__":
 
         print("\n---------------------------------------------")
         print("Finished.")
-
-
-
-# output = "basic.tok"
-# prog = Program()
-# for f in sys.argv[1:]:
-# 	if f.startswith("-o"):
-# 		output = f[2:]
-# 	elif f == "library":
-# 		prog.makelibrary()
-# 	else:
-# 		prog.addFile(f)
-# prog.render(output)
 
 # ---------------------------------------------------------------------------------------
 # END Script
