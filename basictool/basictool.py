@@ -696,15 +696,13 @@ if __name__ == "__main__":
 
     optParams = process_parameters()
 
-    print(optParams)
-
     theCommand = str(optParams.get("cmd"))
     linenumbers = str(optParams.get("linenumbers"))
     output_file = str(optParams.get("output_file"))
     input_file = str(optParams.get("input_file"))
     makelibrary = str(optParams.get("makelibrary"))
 
-    print("NeoBASIC Tool")
+    print("\n\nNeoBASIC Tool")
     print("---------------------------------------------")
     print("Operation: %s" % theCommand)
     if theCommand == "list":
@@ -722,6 +720,9 @@ if __name__ == "__main__":
             with open(output_file, mode='w') as file_handle:
                 file_handle.write(program_listing.code_listing)
 
+        print("\n---------------------------------------------")
+        print("Finished.")
+
     if theCommand == "make":
         print("Input: %s" % (input_file if input_file else "Console (stdin)"))
         print("Output: %s" % (output_file))
@@ -732,15 +733,19 @@ if __name__ == "__main__":
             tokenize_program.makelibrary()
 
         if not input_file:
-            console_input = sys.stdin.readlines()
+            console_input = sys.stdin.read()
             with open("temp.txt", mode='w') as file_handle:
                 file_handle.write(console_input)
             tokenize_program.addFile("temp.txt")
             tokenize_program.render(output_file)
+            # Clean-up after myself, and delete the temporary file.
+            os.remove("temp.txt")
         else:
             tokenize_program.addFile(input_file)
             tokenize_program.render(output_file)
 
+        print("\n---------------------------------------------")
+        print("Finished.")
 
 
 
